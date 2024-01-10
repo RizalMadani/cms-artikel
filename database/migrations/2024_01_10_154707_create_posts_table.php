@@ -20,8 +20,11 @@ return new class extends Migration
                 ->constrained()
                 ->nullOnDelete();
             $table->string('title');
-            $table->string('slug')->unique();
-            $table->string('banner');
+            $table->string('slug')
+                ->nullable()
+                ->unique();
+            $table->string('banner')
+                ->nullable();
             $table->text('body');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
