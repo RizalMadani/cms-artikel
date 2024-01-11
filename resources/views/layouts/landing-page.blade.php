@@ -28,11 +28,11 @@
 </head>
 <body>
 
-    @include('partials.landing-page.nav');
+    @include('partials.landing-page.nav')
 
     @yield('content')
 
-    @include('partials.landing-page.footer');
+    @include('partials.landing-page.footer')
 
 
 
