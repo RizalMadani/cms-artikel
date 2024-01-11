@@ -32,7 +32,7 @@
 
     @yield('content')
 
-    @include('partials.landinfooter');
+    @include('partials.landing-page.footer');
 
 
 
