@@ -26,7 +26,6 @@ return new class extends Migration
             $table->string('banner')
                 ->nullable();
             $table->text('body');
-            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }
