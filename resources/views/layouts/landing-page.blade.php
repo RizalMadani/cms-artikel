@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="landing-page/css/style.css">
+    <link rel="stylesheet" href="/landing-page/css/style.css">
 
     @yield('css')
     {{-- <link rel="stylesheet" href="css/animate.css">
@@ -40,23 +40,23 @@
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div> --}}
 
 
-    <script src="landing-page/js/jquery.min.js"></script>
-    <script src="landing-page/js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="landing-page/js/popper.min.js"></script>
-    <script src="landing-page/js/bootstrap.min.js"></script>
+    <script src="/landing-page/js/jquery.min.js"></script>
+    <script src="/landing-page/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/landing-page/js/popper.min.js"></script>
+    <script src="/landing-page/js/bootstrap.min.js"></script>
 
     @yield('js')
-    {{-- <script src="landing-page/js/jquery.easing.1.3.js"></script> --}}
-    {{-- <script src="landing-page/js/jquery.waypoints.min.js"></script> --}}
-    {{-- <script src="landing-page/js/jquery.stellar.min.js"></script> --}}
-    {{-- <script src="landing-page/js/owl.carousel.min.js"></script> --}}
-    {{-- <script src="landing-page/js/jquery.magnific-popup.min.js"></script> --}}
-    {{-- <script src="landing-page/js/jquery.animateNumber.min.js"></script> --}}
-    {{-- <script src="landing-page/js/bootstrap-datepicker.js"></script> --}}
-    {{-- <script src="landing-page/js/scrollax.min.js"></script> --}}
+    {{-- <script src="/landing-page/js/jquery.easing.1.3.js"></script> --}}
+    {{-- <script src="/landing-page/js/jquery.waypoints.min.js"></script> --}}
+    {{-- <script src="/landing-page/js/jquery.stellar.min.js"></script> --}}
+    {{-- <script src="/landing-page/js/owl.carousel.min.js"></script> --}}
+    {{-- <script src="/landing-page/js/jquery.magnific-popup.min.js"></script> --}}
+    {{-- <script src="/landing-page/js/jquery.animateNumber.min.js"></script> --}}
+    {{-- <script src="/landing-page/js/bootstrap-datepicker.js"></script> --}}
+    {{-- <script src="/landing-page/js/scrollax.min.js"></script> --}}
     {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> --}}
-    {{-- <script src="landing-page/js/google-map.js"></script> --}}
-    <script src="landing-page/js/main.js"></script>
+    {{-- <script src="/landing-page/js/google-map.js"></script> --}}
+    <script src="/landing-page/js/main.js"></script>
 
 </body>
 </html>

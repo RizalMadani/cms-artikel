@@ -13,7 +13,7 @@
             @foreach ($posts as $post)
                 <div class="col-md-4 d-flex">
                     <div class="blog-entry justify-content-end">
-                        <a href="blog-single.html" class="block-20" style="background-image: url('{{
+                        <a href="{{ route('website.post', $post->slug) }}" class="block-20" style="background-image: url('{{
                             $post->banner ? asset('storage/post_banner/'.$post->banner) : '/landing-page/images/gambar_bebas.png'
                         }}');"></a>
 
@@ -27,9 +27,9 @@
                                     <span class="mos">{{ date('F', strtotime($post->updated_at)) }}</span>
                                 </div>
                             </div>
-                            <h3 class="heading"><a href="#">{{ $post->title }}</a></h3>
+                            <h3 class="heading"><a href="{{ route('website.post', $post->slug) }}">{{ $post->title }}</a></h3>
                             <p>{{ $post->excerpt }}</p>
-                            <p><a href="#" class="btn btn-primary">Read more</a></p>
+                            <p><a href="{{ route('website.post', $post->slug) }}" class="btn btn-primary">Read more</a></p>
                         </div>
                     </div>
                 </div>

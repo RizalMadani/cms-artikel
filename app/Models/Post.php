@@ -25,6 +25,11 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getRouteKey(): mixed
+    {
+        return $this->slug;
+    }
+
     public function sluggable(): array
     {
         return [
