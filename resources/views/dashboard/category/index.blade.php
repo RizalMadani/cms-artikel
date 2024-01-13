@@ -25,6 +25,7 @@
                         <tr>
                             <th>No.</th>
                             <th>Nama Kategori</th>
+                            <th>Slug</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -33,6 +34,7 @@
                         <tr>
                             <td>{{ $loop->iteration.'.' }}</td>
                             <td>{{ $category->name }}</td>
+                            <td>{{ $category->slug }}</td>
                             <td>
                                 <a href="{{ route('dashboard.category.edit', $category->id) }}" class="btn btn-sm btn-secondary">
                                     <i class="fa fa-pen mr-2"></i>
@@ -58,7 +60,7 @@
 </div>
 @stop
 
-@section('plugins.Datatables', true)
+{{-- @section('plugins.Datatables', true) --}}
 
 @section('js')
 <script>

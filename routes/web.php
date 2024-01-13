@@ -33,7 +33,7 @@ Route::prefix('dashboard')->name('dashboard.')->group(function () {
     // Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
     // Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
 
-    Route::resource('category', CategoryController::class);
+    Route::resource('category', CategoryController::class)->except(['show']);
 
     Route::get('/user', [DashboardController::class, 'user'])->name('user');
 
