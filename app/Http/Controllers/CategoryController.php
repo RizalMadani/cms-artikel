@@ -48,7 +48,10 @@ class CategoryController extends Controller
         $alertClass = 'success';
         $alert      = ['Berhasil', 'Berhasil mengedit kategori baru'];
 
-        Category::where('id', $id)->update([
+        $category   = Category::where('id', $id)->first();
+
+        $category->slug = null;
+        $category->update([
             'name' => $request->name,
         ]);
 
