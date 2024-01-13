@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WebsiteController;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +30,10 @@ Route::prefix('dashboard')->name('dashboard.')->group(function () {
 
     Route::get('/post', [DashboardController::class, 'post'])->name('post');
 
-    Route::get('/category', [DashboardController::class, 'category'])->name('category');
+    // Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+    // Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+
+    Route::resource('category', CategoryController::class);
 
     Route::get('/user', [DashboardController::class, 'user'])->name('user');
 

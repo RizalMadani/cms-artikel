@@ -299,27 +299,27 @@ return [
         // Sidebar items:
         [
             'text'  => 'Dashboard',
-            'url'   => 'dashboard.index',
+            'route' => 'dashboard.index',
             'icon'  => 'fa fa-home mr-2',
         ],
         [
             'text'  => 'Artikel',
-            'url'   => 'dashboard.post',
+            'route' => 'dashboard.post',
             'icon'  => 'far fa-fw fa-file-alt mr-2',
         ],
         [
             'text'  => 'Kategori',
-            'url'   => 'dashboard.category',
+            'route' => 'dashboard.category.index',
             'icon'  => 'fa fa-boxes mr-2',
         ],
         [
             'text'  => 'User',
-            'url'   => 'dashboard.user',
+            'route' => 'dashboard.user',
             'icon'  => 'far fa-fw fa-user mr-2',
         ],
         [
             'text'  => 'Profil',
-            'url'   => 'dashboard.profile',
+            'route' => 'dashboard.profile',
             'icon'  => 'far fa-fw fa-id-card mr-2',
         ],
     ],
