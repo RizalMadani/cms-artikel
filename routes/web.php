@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WebsiteController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
@@ -22,4 +23,14 @@ Route::get('/category/{category:slug}', [WebsiteController::class, 'category'])-
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::prefix('dashboard')->name('dashboard.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
+
+    Route::get('/post', [DashboardController::class, 'post'])->name('post');
+
+    Route::get('/category', [DashboardController::class, 'category'])->name('category');
+
+    Route::get('/user', [DashboardController::class, 'user'])->name('user');
+
+    Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+});
