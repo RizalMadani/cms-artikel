@@ -25,13 +25,10 @@ Route::get('/category/{category:slug}', [WebsiteController::class, 'category'])-
 
 Auth::routes();
 
-Route::prefix('dashboard')->name('dashboard.')->group(function () {
+Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
     Route::get('/post', [DashboardController::class, 'post'])->name('post');
-
-    // Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
-    // Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
 
     Route::resource('category', CategoryController::class)->except(['show']);
 

@@ -38,9 +38,29 @@ class CategoryController extends Controller
 
     }
 
-    public function destroy(int $id) {
+    public function edit(string $id) {
+        return view('dashboard.category.edit', [
+            'category' => Category::where('id', $id)->first(),
+        ]);
+    }
+
+    public function update(Request $request, string $id) {
         $alertClass = 'success';
-        $alert      = ['Berhasil', 'Berhasil menambah kategori baru'];
+        $alert      = ['Berhasil', 'Berhasil mengedit kategori baru'];
+
+        Category::where('id', $id)->update([
+            'name' => $request->name,
+        ]);
+
+        Session::flash('alert-class', $alertClass);
+        Session::flash('alert', $alert);
+
+        return redirect()->route('dashboard.category.index');
+    }
+
+    public function destroy(string $id) {
+        $alertClass = 'success';
+        $alert      = ['Berhasil', 'Berhasil menghapus kategori baru'];
 
         Category::where('id', $id)->delete();
 
