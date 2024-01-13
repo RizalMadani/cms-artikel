@@ -37,4 +37,16 @@ class CategoryController extends Controller
         return redirect()->route('dashboard.category.index');
 
     }
+
+    public function destroy(int $id) {
+        $alertClass = 'success';
+        $alert      = ['Berhasil', 'Berhasil menambah kategori baru'];
+
+        Category::where('id', $id)->delete();
+
+        Session::flash('alert-class', $alertClass);
+        Session::flash('alert', $alert);
+
+        return redirect()->route('dashboard.category.index');
+    }
 }
