@@ -38,6 +38,11 @@
                             <td>{{ $post->excerpt }}</td>
                             <td>{{ $post->user->name }}</td>
                             <td>
+                                <a href="{{ route('website.post', $post->slug) }}" class="btn btn-sm btn-secondary mb-2">
+                                    <i class="fa fa-eye mr-2"></i>
+                                    Lihat
+                                </a>
+
                                 <a href="{{ route('dashboard.post.edit', $post->id) }}" class="btn btn-sm btn-secondary mb-2">
                                     <i class="fa fa-pen mr-2"></i>
                                     Edit

@@ -411,7 +411,7 @@ return [
                 [
                     'type' => 'css',
                     'asset' => false,
-                    'location' => '/vendor/sweetalert2-theme-bootstrap-4/bootstrap4.min.css',
+                    'location' => '/vendor/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css',
                 ],
                 [
                     'type' => 'js',

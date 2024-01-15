@@ -38,7 +38,7 @@ class PostController extends Controller
         $request->file('banner')->store('post-banner');
 
         Session::flash('alert-class', 'success');
-        Session::flash('alert', 'Berhasil menambahkan artikel baru');
+        Session::flash(['alert', 'Berhasil menambahkan artikel baru']);
 
         return redirect()->route('dashboard.post.index');
     }
@@ -68,6 +68,9 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         Post::destroy($post->id);
+
+        Session::flash('alert-class', 'success');
+        Session::flash(['alert', 'Berhasil menghapus artikel']);
 
         return redirect()->route('dashboard.post.index');
     }
