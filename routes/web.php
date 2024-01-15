@@ -37,4 +37,5 @@ Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(functi
     Route::resource('user', UserController::class);
 
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+    Route::put('/updatePassword', [DashboardController::class, 'updatePassword'])->name('update_password');
 });
