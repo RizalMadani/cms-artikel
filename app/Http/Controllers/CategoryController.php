@@ -46,7 +46,7 @@ class CategoryController extends Controller
 
     public function update(Request $request, string $id) {
         $alertClass = 'success';
-        $alert      = ['Berhasil', 'Berhasil mengedit kategori baru'];
+        $alert      = ['Berhasil', 'Berhasil mengedit kategori'];
 
         $category   = Category::where('id', $id)->first();
 
@@ -63,7 +63,7 @@ class CategoryController extends Controller
 
     public function destroy(string $id) {
         $alertClass = 'success';
-        $alert      = ['Berhasil', 'Berhasil menghapus kategori baru'];
+        $alert      = ['Berhasil', 'Berhasil menghapus kategori'];
 
         Category::where('id', $id)->delete();
 
