@@ -50,9 +50,35 @@ class UserController extends Controller
 
 
         Session::flash('alert-class', 'success');
-        Session::flash('alert', ['Berhasil', 'menambahkan user baru']);
+        Session::flash('alert', ['Berhasil', 'Berhasil menambahkan user baru']);
 
         return redirect()->route('dashboard.user.index');
+    }
+
+    public function update(Request $request, User $user)
+    {
+        // TODO: tambah validasi
+
+        $user->update([
+            'role' => $request->role,
+            'name' => $request->name,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'email' => $request->email,
+        ]);
+
+
+        Session::flash('alert-class', 'success');
+        Session::flash('alert', ['Berhasil', 'Berhashil mengedit user']);
+
+        return redirect()->route('dashboard.user.index');
+    }
+
+    public function edit(User $user)
+    {
+        return view('dashboard.user.edit', [
+            'user' => $user,
+        ]);
     }
 
     public function destroy(User $user)

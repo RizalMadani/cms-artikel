@@ -16,6 +16,16 @@
                     @csrf
 
                     <x-adminlte-input name="name" label="Nama User" error-key="name" enable-old-support="true" value="{{ $user->name }}"></x-adminlte-input>
+                    <x-adminlte-select name="role" label="Role" error-key="role" enable-old-support="true">
+                        <option value="">Pilih role user</option>
+                        <option value="admin" @selected($user->role == 'admin')>Admin</option>
+                        <option value="author" @selected($user->role == 'author')>Author</option>
+                    </x-adminlte-select>
+                    <x-adminlte-input name="phone" label="No. Telepon" error-key="phone" enable-old-support="true" value="{{ $user->phone }}"></x-adminlte-input>
+                    <x-adminlte-textarea name="address" label="Alamat">
+                        {{ $user->address }}
+                    </x-adminlte-textarea>
+                    <x-adminlte-input name="email" label="Email" type="email" error-key="email" enable-old-support="true" value="{{ $user->email }}"></x-adminlte-input>
 
                     <div>
                         <x-adminlte-button label="Edit" theme="primary" type="submit" icon="fas fa-pen mr-2">
