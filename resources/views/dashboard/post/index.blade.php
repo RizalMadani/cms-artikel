@@ -20,7 +20,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <table id="daftar-kategori" class="table table-bordered">
+                <table id="daftar-post" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -71,7 +71,7 @@
 
 @section('js')
 <script>
-    new DataTable('#daftar-kategori', {
+    new DataTable('#daftar-post', {
         responsive: true,
         autoWidht: false,
     });
