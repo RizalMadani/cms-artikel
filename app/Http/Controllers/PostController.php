@@ -38,7 +38,7 @@ class PostController extends Controller
         $request->file('banner')->store('post-banner');
 
         Session::flash('alert-class', 'success');
-        Session::flash(['alert', 'Berhasil menambahkan artikel baru']);
+        Session::flash('alert', ['Berhasil', 'menambahkan artikel baru']);
 
         return redirect()->route('dashboard.post.index');
     }
@@ -59,8 +59,12 @@ class PostController extends Controller
             'user_id' => auth()->user()->id,
             'category_id' => $request->category_id,
             'body' => $request->body,
+            'excerpt' => Str::limit(strip_tags($request->body), 200),
             'banner' => $request->banner
         ]);
+
+        Session::flash('alert-class', 'success');
+        Session::flash('alert', ['Berhasil', 'Berhasil mengedit artikel']);
 
         return redirect()->route('dashboard.post.index');
     }
@@ -70,7 +74,7 @@ class PostController extends Controller
         Post::destroy($post->id);
 
         Session::flash('alert-class', 'success');
-        Session::flash(['alert', 'Berhasil menghapus artikel']);
+        Session::flash('alert', ['Berhasil',  'Berhasil menghapus artikel']);
 
         return redirect()->route('dashboard.post.index');
     }

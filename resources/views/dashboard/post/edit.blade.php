@@ -15,7 +15,35 @@
                     @method('PUT')
                     @csrf
 
-                    <x-adminlte-input name="name" label="Nama Kategori" error-key="name" enable-old-support="true" value="{{ $post->name }}"></x-adminlte-input>
+                    <x-adminlte-input name="title" label="Judul Artikel" error-key="title" enable-old-support="true" value="{{ $post->title }}"></x-adminlte-input>
+
+                    <x-adminlte-select2 name="category_id" label="Kategori" id="select-kategori" data-placeholder="Pilih kategori">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" @selected($category->id == old('category_id', $post->category_id))>{{ $category->name }}</option>
+                        @endforeach
+                    </x-adminlte-select2>
+
+                    @php
+                        $config = [
+                            'height' => '100',
+                            'toolbar' => [
+                                ['style', ['bold', 'italic', 'underline', 'clear']],
+                                ['font', ['strikethrough', 'superscript', 'subscript']],
+                                ['para', ['ul', 'ol', 'paragraph']],
+                                ['height', ['height']],
+                            ]
+                        ]
+                    @endphp
+                    <x-adminlte-text-editor name="body" label="Konten" :config="$config">
+                        {{ $post->body }}
+                    </x-adminlte-text-editor>
+
+                    @if ($post->banner)
+                        <img src="{{ asset('post-banner/'.$post->banner) }}" class="image-preview image-fluid d-block">
+                    @endif
+
+                    <x-adminlte-input-file name="banner" label="Banner" placeholder="Pilih banner artikel">
+                    </x-adminlte-input-file>
 
                     <div>
                         <x-adminlte-button label="Edit" theme="primary" type="submit" icon="fas fa-pen mr-2">
@@ -31,3 +59,14 @@
     </div>
 </div>
 @stop
+
+@section('plugins.Summernote', true)
+@section('plugins.bsCustomFileInput', true)
+
+@section('js')
+    <script>
+        $(document).ready(function() {
+            $('#select-kategori').select2();
+        })
+    </script>
+@endsection
