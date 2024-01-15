@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\WebsiteController;
 use App\Models\Category;
 use App\Models\Post;
@@ -28,7 +29,7 @@ Auth::routes();
 Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
 
-    Route::get('/post', [DashboardController::class, 'post'])->name('post');
+    Route::resource('post', PostController::class);
 
     Route::resource('category', CategoryController::class)->except(['show']);
 
