@@ -72,16 +72,16 @@
 @section('js')
 <script>
     new DataTable('#daftar-user', {
-            responsive: true,
-            autoWidht: false,
-        });
+        responsive: true,
+        autoWidht: false,
+    });
 
-        @if (request()->session()->has('alert'))
-            Swal.fire({
-                icon: '{{ session('alert-class') }}',
-                title: '{{ session('alert')[0] }}',
-                text: '{{ session('alert')[1] }}',
-            });
-        @endif
+    @if (request()->session()->has('alert'))
+        Swal.fire({
+            icon: '{{ session('alert-class') }}',
+            title: '{{ session('alert')[0] }}',
+            text: '{{ session('alert')[1] }}',
+        });
+    @endif
 </script>
 @endsection

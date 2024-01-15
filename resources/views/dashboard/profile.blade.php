@@ -53,16 +53,11 @@
                     @csrf
 
                     <x-adminlte-input name="old" label="Password lama" type="password" error-key="old"></x-adminlte-input>
-                    <x-adminlte-input name="new" label="Password lama" type="password" error-key="new"></x-adminlte-input>
-                    <x-adminlte-input name="confirm" label="Konfirmasi Password" type="password" error-key="confirm"></x-adminlte-input>
+                    <x-adminlte-input name="new" label="Password baru" type="password" error-key="new"></x-adminlte-input>
+                    <x-adminlte-input name="confirm" label="Konfirmasi password baru" type="password" error-key="confirm"></x-adminlte-input>
 
                     <div class="form-group">
-                        <x-adminlte-button label="Tambahkan" theme="primary" type="submit" icon="fas fa-plus mr-2">
-                        </x-adminlte-button>
-                        <a href="{{ route('dashboard.user.index') }}" class="btn btn-secondary">
-                            <i class="fas fa-times mr-2"></i>
-                            Batal
-                        </a>
+                        <x-adminlte-button label="Ubah" theme="primary" type="submit" icon="fas fa-pen mr-2"></x-adminlte-button>
                     </div>
                 </form>
             </div>
@@ -70,3 +65,15 @@
     </div>
 </div>
 @stop
+
+@section('js')
+<script>
+    @if (request()->session()->has('alert'))
+        Swal.fire({
+            icon: '{{ session('alert-class') }}',
+            title: '{{ session('alert')[0] }}',
+            text: '{{ session('alert')[1] }}',
+        });
+    @endif
+</script>
+@endsection
