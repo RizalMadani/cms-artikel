@@ -314,7 +314,7 @@ return [
         ],
         [
             'text'  => 'User',
-            'route' => 'dashboard.user',
+            'route' => 'dashboard.user.index',
             'icon'  => 'far fa-fw fa-user mr-2',
         ],
         [

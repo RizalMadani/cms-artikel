@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebsiteController;
 use App\Models\Category;
 use App\Models\Post;
@@ -33,7 +34,7 @@ Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(functi
 
     Route::resource('category', CategoryController::class)->except(['show']);
 
-    Route::get('/user', [DashboardController::class, 'user'])->name('user');
+    Route::resource('user', UserController::class);
 
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
 });
