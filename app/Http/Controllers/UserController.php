@@ -15,6 +15,12 @@ class UserController extends Controller
         ]);
     }
 
+    public function show(User $user) {
+        return view('dashboard.user.show', [
+            'user' => $user,
+        ]);
+    }
+
     public function destroy(User $user)
     {
         User::destroy($user->id);
