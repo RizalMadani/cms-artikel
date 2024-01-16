@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [WebsiteController::class, 'index'])->name('website.home');
 Route::get('/post/{post:slug}', [WebsiteController::class, 'post'])->name('website.post');
 Route::get('/category/{category:slug}', [WebsiteController::class, 'category'])->name('website.category');
+Route::get('/categories', [WebsiteController::class, 'categories'])->name('website.categories');
 
 Auth::routes();
 

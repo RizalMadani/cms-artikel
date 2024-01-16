@@ -29,4 +29,10 @@ class WebsiteController extends Controller
             'posts'   => Post::where('category_id', $category->id)->get(),
         ]);
     }
+
+    public function categories() {
+        return view('landing-page.categories', [
+            'categories' => Category::all(),
+        ]);
+    }
 }
