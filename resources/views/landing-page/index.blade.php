@@ -14,7 +14,7 @@
                 <div class="col-md-4 d-flex">
                     <div class="blog-entry justify-content-end">
                         <a href="{{ route('website.post', $post->slug) }}" class="block-20" style="background-image: url('{{
-                            $post->banner ? asset('storage/post_banner/'.$post->banner) : '/landing-page/images/gambar_bebas.png'
+                            $post->banner ? asset('storage/'.$post->banner) : '/landing-page/images/gambar_bebas.png'
                         }}');"></a>
 
                         <div class="text">

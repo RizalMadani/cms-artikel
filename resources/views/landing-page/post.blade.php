@@ -5,7 +5,7 @@
 @section('content')
 
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{{
-    $post->banner ? asset('storage/post_banner/'.$post->banner) : '/landing-page/images/gambar_bebas.png'
+    $post->banner ? asset('storage/'.$post->banner) : '/landing-page/images/gambar_bebas.png'
 }}');">
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center" style="min-height: 480px; max-height: 640px;">

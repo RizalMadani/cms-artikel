@@ -33,13 +33,18 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        if($request->file('banner'))
+        {
+            $banner= $request->file('banner')->store('post-banner');
+        }
+
         Post::create([
             'title' => $request->title,
             'user_id' => auth()->user()->id,
             'category_id' => $request->category_id,
             'body' => $request->body,
             'excerpt' => Str::limit(strip_tags($request->body), 200),
-            'banner' => $request->banner
+            'banner' => $banner,
         ]);
 
         $request->file('banner')->store('post-banner');
@@ -60,6 +65,11 @@ class PostController extends Controller
 
     public function update(Request $request, Post $post)
     {
+        if($request->file('banner'))
+        {
+            $banner= $request->file('banner')->store('post-banner');
+        }
+
         $post->slug = null;
         $post->update([
             'title' => $request->title,
@@ -67,7 +77,7 @@ class PostController extends Controller
             'category_id' => $request->category_id,
             'body' => $request->body,
             'excerpt' => Str::limit(strip_tags($request->body), 200),
-            'banner' => $request->banner
+            'banner' => $banner,
         ]);
 
         Session::flash('alert-class', 'success');

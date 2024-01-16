@@ -39,7 +39,7 @@
                     </x-adminlte-text-editor>
 
                     @if ($post->banner)
-                        <img src="{{ asset('post-banner/'.$post->banner) }}" class="image-preview image-fluid d-block">
+                        <img src="{{ asset('storage/'.$post->banner) }}" class="image-preview image-fluid d-block">
                     @endif
 
                     <x-adminlte-input-file name="banner" label="Banner" placeholder="Pilih banner artikel">
