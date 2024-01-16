@@ -34,7 +34,7 @@ Route::middleware('auth')->prefix('dashboard')->name('dashboard.')->group(functi
 
     Route::resource('category', CategoryController::class)->except(['show']);
 
-    Route::resource('user', UserController::class);
+    Route::resource('user', UserController::class)->middleware('isAdmin');
 
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
     Route::put('/updatePassword', [DashboardController::class, 'updatePassword'])->name('update_password');

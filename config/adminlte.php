@@ -301,26 +301,31 @@ return [
             'text'  => 'Dashboard',
             'route' => 'dashboard.index',
             'icon'  => 'fa fa-home mr-2',
+            'can'   => ['admin', 'author'],
         ],
         [
             'text'  => 'Artikel',
             'route' => 'dashboard.post.index',
             'icon'  => 'far fa-fw fa-file-alt mr-2',
+            'can'   => ['admin', 'author'],
         ],
         [
             'text'  => 'Kategori',
             'route' => 'dashboard.category.index',
             'icon'  => 'fa fa-boxes mr-2',
+            'can'   => ['admin', 'author'],
         ],
         [
             'text'  => 'User',
             'route' => 'dashboard.user.index',
             'icon'  => 'far fa-fw fa-user mr-2',
+            'can'   => ['admin'],
         ],
         [
             'text'  => 'Profil',
             'route' => 'dashboard.profile',
             'icon'  => 'far fa-fw fa-id-card mr-2',
+            'can'   => ['admin', 'author'],
         ],
     ],
 
