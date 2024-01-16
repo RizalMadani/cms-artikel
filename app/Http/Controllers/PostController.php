@@ -13,8 +13,14 @@ class PostController extends Controller
 {
     public function index()
     {
+        $post = Post::with('user');
+
+        if (auth()->user()->role === 'author') {
+            $post = $post->where('user_id', auth()->user()->id);
+        }
+
         return view('dashboard.post.index', [
-            'posts' => Post::with('user')->get(),
+            'posts' => $post->get(),
         ]);
     }
 

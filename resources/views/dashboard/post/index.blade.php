@@ -17,6 +17,16 @@
 </div>
 
 <div class="row">
+    @if($posts->isEmpty())
+        <div class="col-12">
+            <div class="alert alert-info alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                Anda belum membuat artikel.
+                <a href="{{ route('dashboard.post.create') }}">Buat artikel baru</a>
+            </div>
+        </div>
+    @endif
+
     <div class="col-12">
         <div class="card">
             <div class="card-body">
